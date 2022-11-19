@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+      <script>
+		const header = document.querySelector('header');
+		const section = document.querySelector('section');
+		const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+		const request = new XMLHttpRequest();      /*nueva instancia de objeto de solicitud desde el constructor XMLHttpRequest*/
+			
+			request.open('GET', requestURL);
+							  /*establecemos el responseType a JSON, de esta forma ese XHR sabe que el servidor estará 							retornando JSON y que esto debería ser convertido en segundo plano en un objeto JavaScript. Entonces 							se envía la solicitud con el método send(): */
+			
+			request.responseType = 'json';
+			request.send();
+							/*En este punto se está almacenando la respuesta a la solicitud (disponible en la propiedad 							response) en una variable llamada superHeroes; esta variable ahora contendrá el objeto JavaScript 							basado en el JSON. Luego se pasa el objeto como argumento a dos funciones — la primera llenará el 							<header> con los datos correctos, mientras la segunda creará una tarjeta de información para cada 							héroe en el equipo y la insertará en <section>.*/
+
+				request.onload = function() {
+ 				 const superHeroes = request.response;
+ 				 populateHeader(superHeroes);
+ 				 showHeroes(superHeroes);
+								}
+
+				function populateHeader(jsonObj) {
+				  const myH1 = document.createElement('h1');
+				  myH1.textContent = jsonObj['squadName'];
+				  header.appendChild(myH1);
+
+ 				 const myPara = document.createElement('p');
+  				myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+ 				 header.appendChild(myPara);
+								}
+/*Se ha llamado al parámetro jsonObj, para recordar que este es un objeto JavaScript originado desde un JSON. Primero se crea un elemento <h1> (en-US) con createElement(), se asigna su textContent igual a la propiedad squadName del objeto, luego se agrega al encabezado utilizandoappendChild(). A continuación se realiza una operación muy parecida en un párrafo: se crea, se asigna su contenido de texto y se agrega al encabezado. La única diferencia es que su texto se asigna a una cadena concatenada que contiene las propiedades homeTown y formed del objeto.*/
+
+function showHeroes(jsonObj) {
+  const heroes = jsonObj['members'];
+
+  for (var i = 0; i < heroes.length; i++) {
+    const myArticle = document.createElement('article');
+    const myH2 = document.createElement('h2');
+    const myPara1 = document.createElement('p');
+    const myPara2 = document.createElement('p');
+    const myPara3 = document.createElement('p');
+    const myList = document.createElement('ul');
+
+    myH2.textContent = heroes[i].name;
+    myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
+    myPara2.textContent = 'Age: ' + heroes[i].age;
+    myPara3.textContent = 'Superpowers:';
+
+    const superPowers = heroes[i].powers;
+    for (var j = 0; j < superPowers.length; j++) {
+      const listItem = document.createElement('li');
+      listItem.textContent = superPowers[j];
+      myList.appendChild(listItem);
+    }
+
+    myArticle.appendChild(myH2);
+    myArticle.appendChild(myPara1);
+    myArticle.appendChild(myPara2);
+    myArticle.appendChild(myPara3);
+    myArticle.appendChild(myList);
+
+    section.appendChild(myArticle);
+  }
+}
+
+/*Para empezar, se almacena la propiedad members del objeto JavaScript en una nueva variable. Este arreglo contiene múltiples objetos que contienen la información para cada héroe.
+
+A continuación, se utiliza un ciclo for para recorrer cada objeto en el arreglo. Para cada uno:
+
+    Se crean varios elementos nuevos: un<article>, un <h2>, tres <p>s, y una <ul>.
+    Se asigna al <h2> para que muestre el name del héroe.
+    Se completan los tres párrafos con su secretIdentity, age, y una línea que diga "Superpowers:" para introducir la información de la lista.
+    Se almacena la propiedad powers en otra variable nueva llamada superPowers — que contiene un arreglo que lista los superpoderes del héroe actual.
+    Para recorrer los superpoderes del héroe, se utiliza otro ciclo for  — para cada uno se crea un elemento <li>, se asigna el superpoder a él y luego se pone el listItem dentro del elemento <ul>  (myList) utilizando appendChild().
+    Lo último es agregar los <h2>, <p>s, y <ul> dentro del <article> (myArticle), luego se agrega <article> dentro de <section>. El orden en que las cosas son agregadas es importante, dado que este es el orden en el que aparecerán dentro del HTML.*/
+
+
+
+
+      </script>
+  </body>
+</html>

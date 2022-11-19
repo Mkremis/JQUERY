@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!doctype html>
+	<html lang="es">
+	<meta charset="UTF-8">
+		<title>Prueba con Ajax</title>
+		<style>
+#container{background-color:black; color:green;}
+</style>
+
+
+<script> 
+const contenedor= document.getElementById("container")
+const url= 'https://jsonplaceholder.typicode.com/users'
+fetch(url)
+.then(res=> res.json())
+.then(data=> {let usuarios = JSON.stringify(data); document.getElementById("container").innerHTML = usuarios;})
+
+//{for(var i=0; i<data.length; i++){var usuarios=data[i]; let myString = JSON.stringify(usuarios); document.write(myString);}})
+
+</script>
+
+<head/>
+<body>
+	
+	<div id="container"></div>
+
+</body>
+</html>
+
