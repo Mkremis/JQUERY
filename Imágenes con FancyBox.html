@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script>
+		!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+</script>
+	
+ <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+
+
+
+
+
+
+<script>
+$(function(){$("#galeria a").fancybox({
+	overlayColor:"#797e79",
+	overlayOpacity: .6,
+	transitionIn: "elastic",
+	tranistionOut: "elastic",
+	titlePosition: "Outside",
+	cyclic:true,
+
+});// fin de fancybox
+});// fin de funcion anonima
+    </script>
+  
+
+</head>
+<body>
+<div class="cabecera">
+<img src="changU.jpg">
+<p class="logo">Changu</p>
+</div>
+
+<div class="contenido">
+<div class="principal">
+<h1>Fotos</h1>
+<div id="galeria">
+<a href="./Imagenes/carwash.jpg" rel="gallery" title="lavamos su auto"><img src="./Imagenes/carwash.jpg" width="70" height="70" alt="lavadero"></a>
+<a href="./Imagenes/flete.jpg" rel="gallery" title="llevamos sus cosas"><img src="./Imagenes/flete.jpg" width="70" height="70" alt="flete"></a>
+<a href="./Imagenes/jardineria.jpg" rel="gallery" title="cuidamos su jardin"><img src="./Imagenes/jardineria.jpg" width="70" height="70" alt="jardineria"></a>
+<a href="./Imagenes/petcare.jpg" rel="gallery" title="cuidamos sus mascotas"><img src="./Imagenes/petcare.jpg" width="70" height="70" alt="petcare"></a>
+<a href="./Imagenes/plagas.jpg" rel="gallery" title="control de plagas"><img src="./Imagenes/plagas.jpg" width="70" height="70" alt="plagas"></a>
+<a href="./Imagenes/homecleaning.jpg" rel="gallery" title="limpiamos su casa"><img src="./Imagenes/homecleaning.jpg" width="70" height="70" alt="limpieza"></a>
+
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Efectos y animaciones II. Vídeo 48</title>
+<style>
+img{
+	/*opacity:0.5} */
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+$(function(){$(document).keypress(function(){$('#imagen').animate(
+{marginLeft:"+=150px"},500)})
+})
+</script>
+</head>
+<body>
+<img src="imgs\car.png" width="300" height="200" id="imagen">
+</body>
+</html>

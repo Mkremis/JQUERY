@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NOTICIAS</title>
+<style>
+h1{text-align:center;}
+div{width:15%; margin:0 100px; float:left; border:#f00 solid 2px; padding:10px;}
+table{width:100%; margin-top:10px;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+
+$(document).ready(function(){
+var botones=document.querySelectorAll("input");
+for(var i=0;i<botones.length;i++){
+botones[i].addEventListener("click",aumentar,false);
+botones[i].addEventListener("click",disminuir,false);
+}
+});
+
+function aumentar(e){var zonaActuacion;
+if (e.target==aumenta1){zonaActuacion="#noticia1";} else if(e.target==aumenta2)
+				{zonaActuacion="#noticia2"} else if(e.target==aumenta3){zonaActuacion="#noticia3";}
+				var tamDefecto=$(zonaActuacion).css("font-size");tamDefecto=parseInt(tamDefecto);
+				$(zonaActuacion).css("font-size",tamDefecto*1.05);}
+function disminuir(e){var zonaActuacion;
+if (e.target==disminuye1){zonaActuacion="#noticia1";} else if(e.target==disminuye2)
+				{zonaActuacion="#noticia2"} else if(e.target==disminuye3){zonaActuacion="#noticia3"}; 
+				var tamDefecto=$(zonaActuacion).css("font-size");tamDefecto=parseInt(tamDefecto);
+				$(zonaActuacion).css("font-size",tamDefecto*0.95);}
+
+
+</script>
+
+</head>
+
+<body>
+<h1>Noticias</h1>
+
+<div id="noticia1">San José de Balcarce es una ciudad serrana, agrícola, ganadera y forestal cabecera del partido homónimo, al sudeste de la provincia de Buenos Aires.
+A pocos km se encuentra la Unidad Integrada Balcarce, compuesta por la Estación Experimental Agropecuaria Balcarce​ del INTA y la Facultad de Ciencias Agrarias de la 
+Universidad Nacional de Mar del Plata. Asimismo es cabecera del Centro Regional Buenos Aires Sur del INTA. También se ubica la Estación Terrena Balcarce (pionera en 
+comunicaciones vía satélite por la ex ENTel), propiedad de Telefónica de Argentina desde las privatizaciones. Sobre la ruta provincial 226, y a pocos minutos del 
+centro de la ciudad se encuentra emplazada la planta de procesamiento y empaque de papas McCain.<table><tr><td style="text-align:left"><input type="button" value="aumentar"
+id="aumenta1"></td><td style="text-align:right"><input type="button" value="diminuir" id="disminuye1"></td></tr></table></div>
+
+<div id="noticia2">Los orígenes de la ciudad de Balcarce se remontan a 1860. En esa época, los pobladores se dividían en “costeros” y “serranos”. Los primeros estaban a
+favor de que la incipiente villa creciera alrededor del puerto de la Laguna de Los Padres y los segundos preferían que la fundación del pueblo cabecera del partido se 
+concretase en la zona montañosa. En 1874, se aprobaron los planos del puerto Balcarce o puerto Laguna de los Padres. Pero, dos años más tarde, por iniciativa de vecinos
+liderados por José de la Cuadra (1832-1882) y el juez de paz José Andrés Chaves (1841-1929), el 22 de junio de 1876 se funda el pueblo de San José de Balcarce, y es 
+declarada ciudad el 15 de septiembre de 1949.El ferrocarril del Sud se inaugura en la localidad en 1892.5​<table><tr><td style="text-align:left"><input type="button" value="aumentar"
+id="aumenta2"></td><td style="text-align:right"><input type="button" value="diminuir" id="disminuye2"></td></tr></table></div>
+
+<div id="noticia3">La población de la ciudad es, según INDEC, de 38.376 habitantes (censo 2010), de las cuales el 18 % habita en terrenos dedicados a actividades rurales.
+La estimación realizada en la zona dice que entre los 15 y 64 años de edad se ubica el 65 %.Este mismo censo afirma que el 34,4 % de la población residente en zonas aptas
+para explotación agrícola y en condiciones de desempeñar una tarea estaba desocupada (mayores a los 14 años). Un 18,8 % de esa población buscaba trabajo, y estaba 
+desempeñando una tarea el 41,8 %. De este último grupo de población, el 15,9% lo hacía en industrias primarias (Agricultura, ganadería, silvicultura y caza), un 60,9 %
+se dedicaba a los servicios y el 14,9 % restante se dedicaba a las actividades industriales o construcción.​<table><tr><td style="text-align:left"><input type="button" value="aumentar"
+id="aumenta3"></td><td style="text-align:right"><input type="button" value="diminuir" id="disminuye3"></td></tr></table></div>
+
+</body>
+</html>

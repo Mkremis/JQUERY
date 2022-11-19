@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Preloader imágenes rollover. Vídeo 51</title>
+<style>
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;}
+img{padding:0 5px; width:200px; height:200px;}
+h1{text-align:center;}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+
+$(function(){
+   var foto_hover=["carwash.jpg","flete.jpg","petcare.jpg"];
+   var imagenes=[];
+   for(var i=0;i<foto_hover.length;i++){imagenes[i]=new Image(); imagenes[i].src=foto_hover[i];};
+
+	
+	$("img").each(function()
+		{$(this).hover(cambiar,restaurar)});
+			function cambiar(e){
+				if (e.target==imagen1){$(this).attr("src",imagenes[0].src)} else 
+				if (e.target==imagen2){$(this).attr("src",imagenes[1].src)} else 
+				if (e.target==imagen3){$(this).attr("src",imagenes[2].src)};
+};//fin funcion cambiar
+			function restaurar(e){
+				if (e.target==imagen1){$(this).attr("src","carwash1.jpg")} else 
+				if (e.target==imagen2){$(this).attr("src","flete1.jpg")} else 
+				if (e.target==imagen3){$(this).attr("src","petcare1.jpg")};
+
+
+
+};//fin funcion restaurar
+
+
+})// fin funtion anonima ready
+			
+		
+</script>
+</head>
+<table width="100%" border="0"> 
+<tr>
+<td><img src="carwash1.jpg" id="imagen1"></td>
+<td><img src="flete1.jpg"  id="imagen2"></td>
+<td><img src="petcare1.jpg"  id="imagen3"></td>
+
+</tr>
+</table>
+
+
+</body>
+</html>

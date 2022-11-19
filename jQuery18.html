@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery XVIII. Eventos con JQuery V.</title>
+<style>
+table{
+	text-align:center;
+	float:right;
+	margin-right:50px;}
+p{
+	font-size:1.3em;}
+#imagen_grande{
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	left:0;
+	right:0;
+	width:700px;
+	height:405px;
+	border:dotted 5px #0000ff;}
+	
+.cerrado{
+	position:absolute;	
+	left:-210px;
+	top:0px;
+	width:213px;
+	height:232px;
+	background-color:#ff9;
+	padding:15px;}
+
+.abierto{
+	position:absolute;	
+	left:0px;
+	top:0px;
+	width:213px;
+	height:232px;
+	background-color:#ff9;
+	padding:15px;}
+#boton{
+	position:absolute;
+	left:216px;
+	top:5px;
+	width:21px;
+	height:25px;
+	z-index:1;
+	cursor:pointer;}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+$(function(){
+var img_src= $("#imagen1").attr("src");
+$("#imagen_grande").hide();
+$("#imagen1").bind("click",img_src,abre_imagen);
+$("#boton").click(function(){$("#menu").toggleClass("abierto");})
+})
+function abre_imagen(e){e.stopPropagation();$("#imagen_grande").fadeIn(1000);$("#img_sustitucion").replaceWith("<img src='"+e.data+"'width='700' height='405'>")}
+$(document).bind("click keypress", function(){$("#imagen_grande").fadeOut(1000);});
+</script>
+</head>
+<body>
+<div id="imagen_grande"><img src="" id="img_sustitucion"></div>
+
+<p>Vikingo (del nórdico antiguo víkingr) es el principal nombre dado a los guerreros que realizaban incursiones de saqueos, provenientes de los pueblos nórdicos procedentes de Escandinavia, famosos por ser grandes navegantes y por llevar a cabo pillajes y ataques en Europa. Dependiendo del contexto y de la interpretación del autor, puede usarse el nombre para referirse a los incursores de esta procedencia o a sus países de origen. La metonimia ha llevado a que el nombre se siga usando aún hoy en día de forma coloquial para referirse a los países escandinavos. Su lengua era el nórdico antiguo.</p>
+
+<p>Si bien existen referencias vagas a pueblos germánicos del mar Báltico y Escandinavia en las fuentes romanas,1​ sus ataques y su aparición en la escena política europea cobran relevancia con el saqueo del monasterio de Lindisfarne (793) en el norte de Gran Bretaña, al que pronto siguieron ataques a otros monasterios. Los anales y crónicas de los dos siglos siguientes están repletos de relatos aterradores. Su actuar violento aterrorizó a las antiguas comunidades, que, aunque acostumbradas a la guerra, no tenían forma de prever cuándo habría una incursión y sufrían una carencia de poderes fuertes en los comienzos de la Edad Media. Estos ataques sumados a los de los húngaros y ávaros, a la presión de pueblos eslavos en Europa Oriental y a la de los árabes en el Sur fueron tanto causa como consecuencia de un período de inestabilidad que favoreció la descentralización política del feudalismo.</p>
+
+<table border="0">
+<tr>
+<td><img src="imgs\Wikinger.jpg" width="150" height="100" id="imagen1"></td>
+</tr>
+</table>
+
+<p>Durante los siglos siguientes, los vikingos y sus descendientes tuvieron gran influencia en la historia europea. En las islas británicas gobernaron durante muchos años hasta ser finalmente derrotados por los normandos, descendientes de vikingos que habían recibido tierras en Normandía (Francia). En Italia fundaron el reino normando de Sicilia e incluso llegaron a influir con sus incursiones en el Califato de Córdoba y en el Imperio bizantino. A través de los ríos del norte intervinieron repetidas veces en el mar Báltico y en Rusia, cuyos primeros estados (la Rus de Kiev) aparecen vinculados a aventureros vikingos.</p>
+
+<p>Se suele datar el final del periodo vikingo con la caída del rey Harald el Despiadado, que murió en la batalla del puente Stamford en el año 1066 cuando intentaba tomar posesión del territorio de Inglaterra;2​ aunque los historiadores daneses amplían hasta 1085 con el final del reinado de Canuto IV de Dinamarca.3​ Si bien la influencia nórdica siguió siendo relevante, la aculturización de normandos en Francia, Inglaterra e Italia, las victorias militares de varios estados como Francia que lograron asegurar las costas y la propia disminución de incursiones escandinavas con la cristianización de Escandinavia supusieron paulatinamente el final de su actividad tal y como se conocía.</p>
+</div>
+<div class="cerrado" id="menu">
+	<div id="boton">X</div>
+<p>Menu:</p>
+<p>Opcion A</p>
+<p>Opcion B</p>
+<p>Opcion C</p>
+<p>Opcion D</p>
+</div>
+</body>
+</html>

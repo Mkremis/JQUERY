@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+img{width:100px; height:100px}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){document.getElementById("img1").addEventListener("mouseover",cambia,false);
+			     document.getElementById("img1").addEventListener("mouseout",restaurar,false)});
+function cambia(){$("img").attr("src","carwash.jpg");};
+function restaurar(){$("img").attr("src","petcare.jpg");};
+
+
+
+
+</script>
+</head>
+<body>
+<img src="C:\Users\kremmar\OneDrive - Baker Hughes\Documents\Programacion\JAVASCRIPT\Imagenes\petcare.jpg" id="img1">
+</body>
+</html>

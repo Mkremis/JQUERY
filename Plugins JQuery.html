@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Plugins JQuery</title>
+<style>
+#menu{	
+	width: 70px;
+	background-color: rgb(110,138,195);
+	padding: 20px 20px 0 20px;
+	position: absolute;
+	left: -92px;
+	z-index:100;}
+#menu img{
+	margin-bottom: 20px;
+	border: 1px solid rgb(0,0,0);}
+h1{
+	text-align: center;}
+p{
+	margin-left: 150px}
+
+
+
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script>
+$(function(){$("#menu").hover(function(){$(this).stop().animate({left:'0px'},500, "easeInSine")//fin animate 1
+}//fin funcion anonima 1 en hover
+, function(){$(this).stop().animate({left:'-92px'}, 1500, "easeOutBounce"
+);// fin animate 2
+
+}// fin funcion anonima 2 en hover
+);//fin hover
+}); //fin funcion anonima 1
+</script>
+
+</head>
+<body>
+
+<div id="menu">
+<img src="Imagenes\carwash.jpg" width="70" height="70" alt="blue">
+<img src="Imagenes\flete.jpg" width="70" height="70" alt="green">
+<img src="Imagenes\homecleaning.jpg" width="70" height="70" alt="orange">
+<img src="Imagenes\jardineria.jpg" width="70" height="70" alt="purple">
+<img src="Imagenes\petcare.jpg" width="70" height="70" alt="red">
+<img src="Imagenes\plagas.jpg" width="70" height="70" alt="yellow">
+</div>
+
+<h1>Menu Deslizante</h1>
+<p>Pasa el raton por el menu de la izquierda</p>
+
+</body>
+</html>

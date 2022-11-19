@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ventanas emergentes e Iframes II. Vídeo 54</title>
+<style>
+body{
+	background-color: #06c;}
+h1{
+	text-align:center;
+	color:#fff;
+	font-weight:bold;}
+#contenedor{
+	background-color:#06c;
+
+	width:500px;
+	height:400px;
+	margin:auto;}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+
+$(function(){$("#pulsar").click(function(e){e.preventDefault(); $("#iframe1").attr("src","FAQ.html");});
+});
+</script>
+
+</head>
+<body>
+<h1>Changu</h1>
+<a href="" id="pulsar">Pulsa</a>
+<div id="contenedor"><iframe src="" width="500" height="400" id="iframe1" frameborder="0"></div>
+
+<!--**metodo iframe inner html: <div id="contenedor"><iframe src="FAQ.html" width="500" height="400"></div>-->
+</body>
+</html>

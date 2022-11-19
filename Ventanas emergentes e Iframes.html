@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ventanas emergentes e Iframes I. Vídeo 53</title>
+<style>
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(function(){
+	$("#miformulario").hide();
+	$("#mivinculo").click(function(e){
+	$("#miformulario").fadeIn(1000);
+	//e.preventDefault(); **deshabilita el comportamiento por defecto del objeto evento e (link a google)**
+	return false;    //**otro metodo para deshabilitar el link a google, deshabilita el comportamiento del navegador**
+});//fin de funcion anonima2
+});//fin de funcion anonima 1
+</script>
+
+</head>
+<body>
+<a href="https://www.google.com/" id="mivinculo">
+Haz Login
+</a>
+<br><br>
+<form name="form1" method="post" action="" id="miformulario">
+<table width="25%" border="0">
+<tr>
+<td>Usuario</td>
+<td><label for="textfield"></label>
+<input type="text" name="textfield" id="textfield"></td>
+</tr>
+<tr>
+<td>Contrasena</td>
+<td><label for="textfield2"></label>
+<input type="text" name="textfield2" id="textfield2"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" align="center"><input type="submit" name="button" id="button" value="enviar"></td>
+</tr>
+</table>
+</body>
+</html>

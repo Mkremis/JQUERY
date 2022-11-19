@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<title>Ventanas emergentes e Iframes III</title>
+<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<style>
+body{
+	background-color:#06c;}
+#principal{
+	margin:50px 0 0 75px;}
+h1{
+	color:#fff;}
+ul{
+	list-style:none;}
+ul li{
+	font-size:1.3em;
+	margin-bottom:5px;}
+li a:link{
+	color:#fff;}
+li a:visited{
+	color:#fff;}
+li a:hover{
+	color:#f00;}
+</style>
+
+ 
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script>
+		!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+</script>
+	
+ <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+
+
+
+
+
+<script>
+$(function(){$(".iframe").fancybox({
+	width:"90%",
+	height:"90%",
+	titlePosition:"outside",
+
+});// fin de fancybox
+});// fin de funcion anonima
+    </script>
+  
+
+</head>
+<body>
+<div id="principal">
+<h1>Links con Fancy</h1>
+<ul>
+<li><a href="https://www.clarin.com/" title="Clarin" class="iframe">Clarin</a></li>
+<li><a href="https://www.infobae.com/" title="Infobae" class="iframe">Infobae</a></li>
+<li><a href="https://www.lanacion.com.ar/" title="La Nacion" class="iframe">La Nacion</a></li>
+</ul></div>
+</body>
+</html>

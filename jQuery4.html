@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo jQuery</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script> 
+function validar(){
+var n_usuario=document.getElementById("usuario").value;if(n_usuario==""){$("#usuario").after("el campo no puede estar vacio!");}
+var n_nombre=document.getElementById("nombre").value;if(n_nombre==""){$("#nombre").after("el campo no puede estar vacio!");}
+var n_apellido=document.getElementById("apellido").value;if(n_apellido==""){$("#apellido").after("el campo no puede estar vacio!");}
+}
+</script>
+</head>
+
+<body>
+
+<form action="" method="get">
+<input type="text" id="usuario"><br/>
+<input type="text" id="nombre"><br/>
+<input type="text" id="apellido"><br/>
+<input type="button" value="Enviar" onClick="validar()">
+
+
+</form>
+</body>
+</html>

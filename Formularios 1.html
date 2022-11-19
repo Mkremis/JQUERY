@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formularios I. Vídeo 57 a 67</title>
+
+<style>
+body{background-color:#FFC;}
+#principal{padding:10px 10px 10px 50px; background-color:#f93; box-shadow: 10px 10px 5px 0px #999999; border-radius: 10px;}
+td{padding-bottom: 25px;}
+h1{text-align: center;}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+$(function(){
+	$("#nombre").focus(function(){if ($(this).val()==$(this).attr("value")){$(this).val("")}});
+		$("#form_datos").submit(function(){
+			if($("#nombre").val()==""||$("#nombre").val()=="obligatorio nombre"){
+				alert("por favor completa el nombre"); $("#nombre").focus(); return false;};	
+});//fin de funcion anonima y funcion submit
+
+	$("#edad").blur(function(){if(isNaN($(this).val())){alert("por favor introduce un valor numerico");$(this).val("").focus();}})//detecta sí se introduce un value no numerico en el campo edad cuando se saca el foco del campo, borra el value introducido y pone el foco nuevamente en el campo
+	
+	var aficiones=new Array();var i=0; $(":checkbox").click(function(){aficiones[i]=$(this).val(); $("#las_aficiones").append(aficiones[i]).append	("<br>");  i++;})//agrupa en un array todas los value seleccionados en un checkbox
+	
+	$("#pais").change(function(){alert($(this).val())})// **rescata el value de una lista deplegable "select"
+
+
+}); //fin de funcion ready
+
+//function comprobar_datos(){if($("#masculino").prop("checked")){alert("eres hombre")} else {alert("eres mujer")}} **funcion prop() 
+//$(":input").each(function(){alert($(this).val());});} **rescata todos los value ingresados en un formulario
+//$(":radio").click(function(){alert($(this).val()); **rescata value de los radios del formulario
+//$(":checkbox").click(function(){alert($(this).val()); **rescata value de los checkbox del formulario
+//$(document).dblclick(function(){$(":text").each(function(){alert($(this).val());})}) **rescata los value ingresados en todos los campos de texto
+</script>
+
+</head>
+<body>
+<h1>Envio de datos</h1>
+<div id="contenedor">
+<form id="form_datos">
+<table width="20%" border="0" align="center" id="principal">
+	<tr>
+		<td>Nombre:</td>
+		<td><label for="nombre">ingrese su nombre</label>
+		<input type="text" name="nombre" id="nombre" value="obligatorio nombre" placeholder="escriba su nombre"></td>
+	</tr>
+	<tr>
+		<td>Apellido:</td>
+		<td><input type="text" name="apellido" id="apellido"></td>
+	</tr>
+	<tr>
+		<td>Edad:</td>
+		<td><input type="text" name="edad" id="edad"></td>
+	</tr>
+	<tr>
+		<td>Genero:</td>
+		<td><p>
+		<label>
+		  <input type="radio" name="genero" value="Masculino" id="masculino">masculino</label>
+		<br>
+		<label>
+		  <input type="radio" name="genero" value="Femenino" id="femenino">femenino</label>
+		<br>
+		</p></td>
+	</tr>
+	<tr>
+		<td>Pais:</td>
+		<td><label for="pais"></label>
+		<select name="pais" id="pais">
+			<option>Espana</option>
+			<option>Mexico</option>
+			<option>Colombia</option>
+			<option>Peru</option>
+			<option>Chile</option>
+			<option>Argentina</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>Aficiones:</td>
+		<td><table width="200">
+			<tr>
+				<td><label>
+				<input type="checkbox" name="deporte" value="deporte" id="deporte">deporte</label></td>
+				<td><input type="checkbox" name="informatica" value="informatica" id="informatica">informatica</label></td>
+			</tr>
+			<tr>
+				<td><label>
+				<input type="checkbox" name="lectura" value="lectura" id="lectura">lectura</label></td>
+				<td><input type="checkbox" name="cine" value="cine" id="cine">cine</label></td>
+			</tr>
+			<tr>
+				<td><label>
+				<input type="checkbox" name="bares" value="bares" id="bare">bares</label></td>
+				<td><input type="checkbox" name="naturaleza" value="naturaleza" id="naturaleza">naturaleza</label></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+	<td colspan="2" align="center"><input type="submit" value="Enviar" id="comprobar"></td>
+	</tr>
+</table>
+</form>
+</div>
+<div id="las_aficiones">
+</div>
+</body>
+</html>

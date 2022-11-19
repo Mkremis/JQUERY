@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formularios VII Validación I. Vídeo 63</title>
+
+<style>
+body{background-color:#FFC;}
+#principal{padding:10px 10px 10px 50px; background-color:#f93; box-shadow: 10px 10px 5px 0px #999999; border-radius: 10px;}
+td{padding-bottom: 25px;}
+h1{text-align: center;}
+.no_habilitado{visibility:hidden}
+label.error{color:#ff5; font-size:8px;}/*los Label son generados por jquery.validate y continen la clase error para los mensajes*/
+input.error{background-color:#55ff88;}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="jquery.validate\jquery.validate.js"></script>
+<script>
+$(function(){
+		$("#form_datos").validate({
+		rules:{
+			nombre:"required",
+			apellido:"required",
+			fecha_nac:{date:true, required:true,},
+			edad:{number:true, range:[1,105]},
+			email:"email",
+			web:"url",
+			},//fin de rules
+
+		messages:{nombre:"este campo es obligatorio",
+			  apellido:"este campo es obligatorio",
+			  fecha_nac:{required:"este campo es obligatorio", date:"formato:MM/DD/AAAA",},
+			  edad:{number:"introduce un numero", range:"introduce un valor entre 1 y 105"},
+		 	  email:"ingresa una direccion de email correcta",
+			  web:"ingresa un URL correcto:http://...",
+			  
+
+
+			}//fin de messages
+});//fin de funcion validate		
+}); //fin de funcion ready
+</script>
+
+</head>
+<body>
+<h1>Envio de datos</h1>
+<div id="contenedor">
+<form id="form_datos">
+<table width="20%" border="0" align="center" id="principal">
+	<tr>
+		<td><label for="nombre">Nombre:</label></td>
+		<td><input type="text" name="nombre" id="nombre" ></td>
+	</tr>
+	<tr>
+		<td><label for="apellido">Apellido:</label></td>
+		<td><input type="text" name="apellido" id="apellido"></td>
+	</tr>
+	<tr>
+		<td><label for="fecha_nac">Fecha de Nacimiento:</label></td>
+		<td><input type="text" name="fecha_nac" id="fecha_nac" ></td>
+	</tr>
+	<tr>
+		<td><label for="edad">Edad:</label></td>
+		<td><input type="text" name="edad" id="edad"></td>
+	</tr>
+	<tr>
+		<td><label for="cp">Codigo Postal:</label></td>
+		<td><input type="text" name="cp" id="cp"></td>
+	</tr>
+
+	<tr>
+		<td><label for="email">Email:</label></td>
+		<td><input type="text" name="email" id="email" ></td>
+	</tr>
+	<tr>
+		<td><label for="web">Pagina Web:</label></td>
+		<td><input type="text" name="web" id="web" ></td>
+	</tr>
+
+
+
+
+	<tr>
+		<td>Pais:</td>
+		<td><label for="pais"></label>
+		<select name="pais" id="pais">
+			<option>Espana</option>
+			<option>Mexico</option>
+			<option>Colombia</option>
+			<option>Peru</option>
+			<option>Chile</option>
+			<option>Argentina</option>
+		</select></td>
+	</tr>
+	
+		
+	<tr>
+	<td colspan="2" align="center"><input type="submit" value="Enviar" id="comprobar"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

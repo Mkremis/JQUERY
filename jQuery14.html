@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>links</title>
+<style>
+h1{text-align:center;}
+body{background-color:#334873; color:#fff;}
+#principal{width:60%; margin:auto;}
+a{color:#fff; font:bold 20px Verdana, Genoveva, sans-serif;}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(function(){$("html").on("dblclick",function(){alert("hola")});
+		$("a").on("mouseover",function(){var mensaje="<p>estas pasando el raton por encima del link<p>";$("#principal").append(mensaje)});
+		$("#el_boton").on("click",function(){$(this).val("seleccionado").css("background-color","yellow")});
+		$("#el_campo").on("focus",function(){$(this).val("escribe aqui").css("background-color","yellow")});
+
+})
+
+</script>
+</head>
+<body>
+<div id="principal">
+<h1>Introduccion a Eventos</h1>
+<p><a href="">Un Link</a></p>
+<form action="#" method="get">
+<fieldset><legend>Formulario<legend>
+<p><input name="button" type="button" id="el_boton" value="un boton"></p>
+<p><input name="textfield" type="text" id="el_campo"></p>
+</form>
+</div>
+
+
+
+</body>
+</html>

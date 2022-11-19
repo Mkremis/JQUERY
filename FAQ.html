@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FAQ</title>
+<style>
+body{
+	background-color:blue;
+	color:#fff;}
+
+h3{	padding:10px 0 0 25px;
+	cursor:pointer;}
+h3::before{
+	font-weight:bold;
+  	color: #fff;
+ 	content: "+";
+}
+
+.selection::before{
+	font-weight:bold;
+  	color: #fff;
+ 	content: "-";
+}
+
+.respuesta{
+	margin-left:25px;}
+.titulo{
+	text-align:center}
+.principal{
+	margin-left:200px;
+	margin-top:150px;}
+
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+var objH
+$(function(){
+	$(".respuestas").hide();
+	$(".principal h3").click(function(e){objH=$(e.target);$(objH).addClass("selection");$(this).next(".respuestas").fadeToggle(function(){if($(this).is(":hidden")){$(objH).removeClass("selection")};});});})
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+
+<h1 class="titulo">Bienvenidos</h1>
+<div class="principal">
+<h2>Preguntas Frecuentes<h2>
+<h3>Pregunta 1</h3>
+<div class="respuestas"><p>Respuesta1</p></div>
+<h3>Pregunta 2</h3>
+<div class="respuestas"><p>Respuesta2</p></div>
+<h3>Pregunta 3</h3>
+<div class="respuestas"><p>Respuesta3</p></div>
+<h3>Pregunta 4</h3>
+<div class="respuestas"><p>Respuesta4</p></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Banner de prueba</title>
+<style>
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;}
+img{padding:0 5px; width:200px; height:200px;}
+h1{text-align:center;}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+	$("img").each(function(){$(this).mouseover(cambiar).mouseout(restaurar);})})
+
+			    function cambiar(e){if(e.target==imagen1){$("#imagen1").attr("src","carwash.jpg")}
+			                         else if(e.target==imagen2){$("#imagen2").attr("src","flete.jpg")}
+						else if(e.target==imagen3){$("#imagen3").attr("src","petcare.jpg")}}
+			   function restaurar(e){if(e.target==imagen1){$("#imagen1").attr("src","carwash1.jpg")}
+			                         else if(e.target==imagen2){$("#imagen2").attr("src","flete1.jpg")}
+						else if(e.target==imagen3){$("#imagen3").attr("src","petcare1.jpg")}}
+</script>
+</head>
+<h1>Galeria de Imagenes</h1>
+<table width="100%" border="0"> 
+<tr>
+<td><img src="Imagenes\carwash1.jpg" id="imagen1"></td>
+<td><img src="Imagenes\flete1.jpg"  id="imagen2"></td>
+<td><img src="Imagenes\petcare1.jpg"  id="imagen3"></td>
+</tr>
+</table>
+
+
+</body>
+</html>

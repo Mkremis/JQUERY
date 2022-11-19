@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Eventos con JQuery II. Vídeo 43</title>
+<style>
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;}
+img{padding:0 5px; width:200px; height:200px;}
+#mensaje{position:absolute;
+		left:623px;
+		top:392px;
+		width:581px;
+		height:215px;
+		background-color:#ff9;
+		font-size:24px;
+		font-weight:bold;
+		padding:25px;
+		border: dotted 2px #00f;}
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+var msje1="lavamos su auto";
+var msje2="llevamos su carga";
+var msje3="cuidamos sus mascotas";
+var msje4="arreglamos su jardin";
+
+$(function(){$("#mensaje").hide();$("img").hover(function(e){if(e.target==img1){$("#mensaje").text(msje1);$("#mensaje").show();}
+								else if(e.target==img2){$("#mensaje").text(msje2);$("#mensaje").show();}
+								else if(e.target==img3){$("#mensaje").text(msje3);$("#mensaje").show();}
+								else if(e.target==img4){$("#mensaje").text(msje4);$("#mensaje").show();}}
+						,function(e){$("#mensaje").hide()})})
+
+</script>
+</head>
+
+<table width="100%" border="0"> 
+<tr>
+<td><img src="carwash.jpg" id="img1"></td>
+<td><img src="flete.jpg"  id="img2"></td>
+<td><img src="petcare.jpg"  id="img3"></td>
+<td><img src="jardineria.jpg"  id="img4"></td>
+</tr>
+</table>
+<div id="mensaje"></div>
+
+
+</body>
+</html>

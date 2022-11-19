@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Leyendo y cambiando atributos HTML II. Vídeo 40</title>
+<style type="text/css">
+#contenedor1{
+	position:absolute;
+	left:67px;
+	top:177px;
+	width:408px;
+	height:298px;
+	z-index:1;}
+#contenedor2{
+	position:absolute;
+	left:510px;
+	top:176px;
+	width:443px;
+	height:297px;
+	z-index:2;}
+ul{
+	list-style:none;}
+li{
+	margin:10px 0;
+	font-size:24px;
+	width:95px;}
+.destacar{
+	background-color:#f00;
+	color:#fff;}
+img{width:200px;
+    height:200px;}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){$("li").each(function(){$(this).mouseover(pon_imagen).mouseout(quita_imagen);})})
+			
+			/**var elementos=document.querySelectorAll("li");
+			for (var i=0;i<elementos.length;i++){
+			elementos[i].addEventListener("mouseover",pon_imagen,false);
+			elementos[i].addEventListener("mouseout",quita_imagen,false);}});**/
+
+
+function pon_imagen(e){$(this).addClass("destacar");
+if(e.target==elem1){$("img").attr("src","petcare.jpg")}
+else if(e.target==elem2){$("img").attr("src","carwash.jpg")}	
+else if(e.target==elem3){$("img").attr("src","flete.jpg")}
+else if(e.target==elem4){$("img").attr("src","jardineria.jpg")}
+}
+function quita_imagen(e){$(this).removeClass("destacar");
+if(e.target==elem1){$("img").removeAttr("src")}
+else if(e.target==elem2){$("img").removeAttr("src")}
+else if(e.target==elem3){$("img").removeAttr("src")}
+else if(e.target==elem4){$("img").removeAttr("src")}
+}
+
+</script>
+</head>
+<body>
+<div id="contenedor1">
+<ul>
+<li id="elem1">imagen 1</li>
+<li id="elem2">imagen 2</li>
+<li id="elem3">imagen 3</li>
+<li id="elem4">imagen 4</li>
+</ul>
+</div>
+<div id="contenedor2">
+<img src="">
+</div>
+</body>
+</html>

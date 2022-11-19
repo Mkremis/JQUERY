@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Efectos y animaciones II. Vídeo 48</title>
+<style>
+img{
+    opacity:0.5} 
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+$(function(){$('#imagen').mouseover(function(){$(this).animate({opacity:1},250)}); 
+$('#imagen').mouseout(function(){$(this).animate({opacity:0.5},250)}); 
+
+
+})
+</script>
+</head>
+<body>
+<img src="imagenes\petcare.jpg" width="300" height="200" id="imagen">
+<p id="petcare">PETCARE</p>
+</body>
+</html>

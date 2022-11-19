@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Banner de prueba</title>
+<style>
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;}
+img{padding:0 5px; width:200px; height:200px;}
+h1{text-align:center;}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(function(){$("#boton").click(function(){$("img").each(function(){$(this).fadeOut(1000).fadeIn(1000).width(300)})
+})
+})
+</script>
+</head>
+<h1>Galeria de Imagenes</h1>
+<table width="100%" border="0"> 
+<tr>
+<td><img src="carwash.jpg" id="imagen1"></td>
+<td><img src="flete.jpg"  id="imagen2"></td>
+<td><img src="petcare.jpg"  id="imagen3"></td>
+<td><img src="jardineria.jpg"  id="imagen4"></td>
+</tr>
+</table>
+<input type="button" value="Accion" id="boton">
+
+
+</body>
+</html>

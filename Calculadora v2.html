@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calculadora</title>
+<style> 
+[type="button"]{
+  height: 30px;
+  width: 50px;
+}
+
+</style> 
+</head>
+<body>
+<table align="center" style="border-collapse: collapse; width: 25%;" border="1">
+
+  <tr>
+    <td colspan="4" align="center">
+      <input type="display" type"text" id="display" size="25">
+    </td>
+  </tr>
+
+  <tr>
+    <td style="width: 25%;"><input type="button" class="button" id="plus" value="+"></td>
+    <td style="width: 25%;"><input type="button" class="button" id="minus" value="-"></td>
+    <td style="width: 25%;"><input type="button" class="button" id="multiply" value="*"></td>
+    <td style="width: 25%;"><input type="button" class="button" id="division" value="/"></td>
+  </tr>
+  <tr>
+    <td><input type="button" class="number" id="num7" value="7"></td>
+    <td><input type="button" class="number" id="num8" value="8"></td>
+    <td><input type="button" class="number" id="num9" value="9"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input type="button" class="number" id="num4" value="4"></td>
+    <td><input type="button" class="number" id="num5" value="5"></td>
+    <td><input type="button" class="number" id="num6" value="6"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input type="button" class="number" id="num1" value="1"></td>
+    <td><input type="button" class="number" id="num2" value="2"></td>
+    <td><input type="button" class="number" id="num3" value="3"></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input type="button" class="number" id="num0" value="0"></td>
+    <td><input type="button" class="button" id="coma" value=","></td>
+    <td colspan="2"><input type="button" class="button" id="igual" value="="></td>
+  </tr>
+</table>
+</body>
+
+<script>
+var cifra = "";
+var acumulado = 0;
+var sumar = false;
+var restar = false;
+var multiplicar = false;
+var dividir = false;
+var contador_resta = 0;
+var contador_multi = 0;
+var contador_div = 0;
+var display = document.getElementById("display");
+var $valor;
+
+document.addEventListener("click", calculadora);
+
+function calculadora(e) {
+  /*if (/[0-9]/g.test(e.target.value)) {
+    display.value = cifra + e.target.value;
+    cifra = display.value;*/
+ 
+ if (e.target.matches(".number")) {
+    display.value = cifra + e.target.value;
+    cifra = display.value;
+  } else {
+    $valor = e.target.value.toString();
+    switch ($valor) {
+      case "+":
+        acumulado = acumulado + parseInt(cifra);
+        cifra = "";
+        display.value = acumulado;
+        sumar = true;
+        break;
+      case "-":
+        if (contador_resta > 0) {
+          acumulado = acumulado - parseInt(cifra);
+          cifra = "";
+          display.value = acumulado;
+          restar = true;
+          contador_resta++;
+        } else {
+          acumulado = parseInt(cifra);
+          cifra = "";
+          restar = true;
+          contador_resta++;
+        }
+        break;
+      case "*":
+        if (contador_multi == 0) acumulado = 1;
+        acumulado = acumulado * parseInt(cifra);
+        display.value = acumulado;
+        cifra = "";
+        multiplicar = true;
+        contador_multi++;
+        break;
+      case "/":
+        if (contador_div > 0) {
+          acumulado = acumulado / parseInt(cifra);
+          display.value = acumulado;
+          cifra = "";
+          dividir = true;
+        } else {
+          acumulado = parseInt(cifra);
+          cifra = "";
+          dividir = true;
+          contador_div++;
+        }
+        break;
+      case "=":
+        if (sumar == true) {
+          cifra = acumulado + parseInt(cifra);
+          display.value = cifra;
+          acumulado = 0;
+          sumar = false;
+          restar = false;
+          multiplicar = false;
+        } else if (restar == true) {
+          acumulado = acumulado - parseInt(cifra);
+          display.value = acumulado;
+          cifra = acumulado;
+          contador_resta = 0;
+          sumar = false;
+          restar = false;
+          multiplicar = false;
+        } else if (multiplicar == true) {
+          cifra = acumulado * parseInt(cifra);
+          display.value = cifra;
+          acumulado = 0;
+          contador_multi = 0;
+          sumar = false;
+          restar = false;
+          multiplicar = false;
+        } else if (dividir == true) {
+          cifra = acumulado / parseInt(cifra);
+          display.value = cifra;
+          contador_div = 0;
+          sumar = false;
+          restar = false;
+          multiplicar = false;
+          dividir = false;
+        }
+        break;
+    } // end switch
+  } // end else
+} // end calculadora()
+</script>
+</html>

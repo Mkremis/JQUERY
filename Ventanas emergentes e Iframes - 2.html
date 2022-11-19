@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ventanas emergentes e Iframes II. Vídeo 54</title>
+<style>
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+//**ejemplo con ventana emergente**
+$(function(){
+		var propiedadesVentana="width=300, height=300, left=100, top=100, scrollbars=no, toolbars=no";
+		var miVentana= open("Ventanas emergentes e Iframes.html","formulario-registro", propiedadesVentana);
+			$("#boton_cerrar").click(function(e){e.preventDefault();miVentana.close();});
+
+});
+
+</script>
+
+</head>
+<body>
+<a href="https://www.youtube.com/watch?v=Yp0R0Xj1Woo">Ir al video</a>
+<br><br><br>
+<a href="" id="boton_cerrar">Cerrar</a>
+
+</body>
+</html>

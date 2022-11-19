@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formularios I. Vídeo 57 a 67</title>
+
+<style>
+body{background-color:#FFC;}
+#principal{padding:10px 10px 10px 50px; background-color:#f93; box-shadow: 10px 10px 5px 0px #999999; border-radius: 10px;}
+td{padding-bottom: 25px;}
+h1{text-align: center;}
+.no_habilitado{visibility:hidden}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+$(function(){
+		$("#paypal").click(function(){$("#email").removeClass()/*.css("visibility","visible")*/;$("#email :text").focus();$("#tarjeta, #fecha_expiracion").addClass("no_habilitado");});
+		$("#mastercard, #visa").click(function(){$("#tarjeta, #fecha_expiracion").removeClass();$("#tarjeta :text").focus();$("#email").addClass("no_habilitado"); $("#email :text").val("");});
+		
+
+}); //fin de funcion ready
+</script>
+
+</head>
+<body>
+<h1>Envio de datos</h1>
+<div id="contenedor">
+<form id="form_datos">
+<table width="20%" border="0" align="center" id="principal">
+	<tr>
+		<td>Nombre:</td>
+		<td><label for="nombre"></label>
+		<input type="text" name="nombre" id="nombre"></td>
+	</tr>
+	<tr>
+		<td>Direccion:</td>
+		<td><input type="text" name="direccion" id="direccion"></td>
+	</tr>
+	<tr>
+		<td>Ciudad:</td>
+		<td><input type="text" name="ciudad" id="ciudad"></td>
+	</tr>
+	<tr>
+		<td>Codigo Postal:</td>
+		<td><input type="text" name="cp" id="cp"></td>
+	</tr>
+
+<tr>
+		<td>Metodo de Pago:</td>
+		<td><p>
+		<label>
+		  <input type="radio" name="metodoPago" value="paypal" id="paypal">PayPal</label>
+		<br>
+		<label>
+		  <input type="radio" name="metodoPago" value="mastercard" id="mastercard" >MasterCard</label>
+		<br>
+		<label>
+		  <input type="radio" name="metodoPago" value="visa" id="visa">Visa</label>
+		<br>
+		</p></td>
+	</tr>
+
+<tr>
+	<td>Datos de Pago:</td>
+		<td><table width="200">
+			<tr id="tarjeta" class="no_habilitado">
+				<td><label for="tarjeta" id="n_tarjeta">Numero de Tarjeta</label></td>
+			     	<td><input type="text" name="tarjeta"></td>
+			</tr>
+			<tr id="fecha_expiracion" class="no_habilitado">
+				<td align="left"><label for="fecha_tarjeta" id="f_tarjeta">Fecha Expiracion</label></td>
+				<td><input type="text" name="fecha_tarjeta"></td>
+			</tr>
+			<tr id="email" class="no_habilitado">
+				<td><label for="email" id="e_mail">Email</label></td>
+				<td><input type="text" name="email"></td>
+			</tr>
+</table></tr></td>
+
+	<tr>
+		<td>Pais:</td>
+		<td><label for="pais"></label>
+		<select name="pais" id="pais">
+			<option>Espana</option>
+			<option>Mexico</option>
+			<option>Colombia</option>
+			<option>Peru</option>
+			<option>Chile</option>
+			<option>Argentina</option>
+		</select></td>
+	</tr>
+	
+		
+	<tr>
+	<td colspan="2" align="center"><input type="submit" value="Enviar" id="comprobar"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

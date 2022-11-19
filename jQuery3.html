@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.micontenedor{background-color:red;};
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script> 
+$(document).ready(function(){$("#errores h2")
+//.html("<p>funcion html: sustituye el contenido de la etiqueta apuntada</p>")
+.text("funcion text: sustituye el contenido de la etiqueta apuntada pero no puede manipular las etiquetas html como lo hace la funcion: .html")
+.append("<h3>funcion append:agrega contenido despues pero dentro de la etiqueta apuntada</h3>")
+.prepend("<h1>funcion prepend:agrega contenido antes pero dentro de la etiqueta apuntada</h1>")
+.before("<p>funcion before: agrega contenido antes pero fuera de la etiqueta apuntada</p>")
+.after("<p>funcion after: agrega contendio despues pero fuera de la etiqueta apuntada</p>")
+});
+//alert($("#errores h2").html());});
+</script>
+</head>
+
+<body>
+<div id="contenedor">
+	<div id="errores" >
+<h2 class="micontenedor">Errores</h2></div>
+</div>
+
+</body>
+</html>
